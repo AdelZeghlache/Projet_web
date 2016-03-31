@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Salarie list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Datenaissance</th>
+                <th>Sexe</th>
+                <th>Dateentre</th>
+                <th>Typecontrat</th>
+                <th>Dureecontrat</th>
+                <th>Salaire</th>
+                <th>Superieurhierarchique</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salarie in salaries %}
+            <tr>
+                <td><a href="{{ path('salarie_show', { 'id': salarie.id }) }}">{{ salarie.nom }}</a></td>
+                <td>{{ salarie.prenom }}</td>
+                <td>{% if salarie.datenaissance %}{{ salarie.datenaissance|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ salarie.sexe }}</td>
+                <td>{% if salarie.dateentre %}{{ salarie.dateentre|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ salarie.typecontrat }}</td>
+                <td>{{ salarie.dureecontrat }}</td>
+                <td>{{ salarie.salaire }}</td>
+                <td>{{ salarie.superieurhierarchique }}</td>
+                <td>{{ salarie.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('salarie_show', { 'id': salarie.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('salarie_edit', { 'id': salarie.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('salarie_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

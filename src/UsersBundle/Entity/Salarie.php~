@@ -1,0 +1,89 @@
+<?php
+
+namespace UsersBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Salarie
+ *
+ * @ORM\Table(name="salarie")
+ * @ORM\Entity
+ */
+class Salarie
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=30, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=15, nullable=false)
+     */
+    private $prenom;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateNaissance", type="date", nullable=false)
+     */
+    private $datenaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sexe", type="string", length=1, nullable=false)
+     */
+    private $sexe;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateEntre", type="date", nullable=false)
+     */
+    private $dateentre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typeContrat", type="string", length=3, nullable=false)
+     */
+    private $typecontrat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="DureeContrat", type="integer", nullable=false)
+     */
+    private $dureecontrat;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="salaire", type="integer", nullable=false)
+     */
+    private $salaire;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="superieurHierarchique", type="integer", nullable=false)
+     */
+    private $superieurhierarchique;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
+
