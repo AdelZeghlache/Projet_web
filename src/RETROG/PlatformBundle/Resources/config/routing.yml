@@ -1,0 +1,31 @@
+# src/RETROG/PlatformBundle/Resources/config/routing.yml
+
+retrog_platform_home:
+    path:      /{page}
+    defaults:
+        _controller: RETROGPlatformBundle:Advert:index
+        page:        1
+    requirements:
+        page: \d*
+
+retrog_platform_view:
+    path:      /advert/{id}
+    defaults:  { _controller: RETROGPlatformBundle:Advert:view }
+    requirements:
+        id: \d+
+
+retrog_platform_add:
+    path:      /add
+    defaults:  { _controller: RETROGPlatformBundle:Advert:add }
+
+retrog_platform_edit:
+    path:      /edit/{id}
+    defaults:  { _controller: RETROGPlatformBundle:Advert:edit }
+    requirements:
+        id: \d+
+
+retrog_platform_delete:
+    path:      /delete/{id}
+    defaults:  { _controller: RETROGPlatformBundle:Advert:delete }
+    requirements:
+        id: \d+

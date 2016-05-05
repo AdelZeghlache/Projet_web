@@ -1,0 +1,18 @@
+retrog_user:
+    resource: "@RETROGUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+retrog_platform:
+    resource: "@RETROGPlatformBundle/Resources/config/routing.yml"
+    prefix:   /platform
+
+login:
+    path: /login
+    defaults:  { _controller: RETROGUserBundle:Security:login}
+
+login_check:
+    path:   /login_check
+
+logout:
+    path:   /logout

@@ -1,0 +1,4 @@
+services:
+#    retrog_platform.example:
+#        class: RETROG\PlatformBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
